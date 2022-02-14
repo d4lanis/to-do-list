@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"></script>
+    <script src="/bootstrap-5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css">
+    <script src="/fontawesome-free-6.0.0/js/fontawesome.min.js"></script>
+    <link rel="stylesheet" href="/fontawesome-free-6.0.0/css/fontawesome.min.css">
+    <script src="/js/todo.js" async wait></script>
+</head>
+<body>
+    <style>
+        #form{
+            padding: 10px;
+        }
+
+        a{
+            margin: 5px;
+        }
+
+        .tasks{
+            margin: 5px;
+        }
+
+        #addTask{
+            margin: 10px
+        }
+    </style>
+    <div class="container col-12 col-md-12" id="form">
+        <form action="#" class="form-control">
+            <div class="form-group row">
+                <div class="justify-content-center text-center">
+                    <p class="h2">TO-DO List</p>
+                </div>
+                <div class="form-group row">
+                    <div class="form-group col justify-content-evenly">
+                        <a id="allTasks" href="#" class="text-decoration-none">Todas</a>
+                        <a id="activeTasks" href="#" class="text-decoration-none">Activas</a>
+                        <a id="completedTasks" href="#" class="text-decoration-none">Completadas</a>
+                    </div>
+                </div>
+                <div id="addBtn" class="form-group row justify-content-center">
+                    <button id="addTask" class="btn btn-outline-success btn-lg col-md-11" data-bs-toggle="modal" data-bs-target="#addToList">
+                        <i class="fa-solid fa-plus"></i>
+                </div>
+            </div>
+        </form>
+
+        <div class="modal fade" id="addToList" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"> 
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Agregar Tarea</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </buttont>
+                    </div>
+                    <div class="modal-body">
+                        <input id="task" class="form-control" type="text" placeholder="escribe aqui la nueva tarea">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add" type="button" class="btn btn-primary">Agregar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
