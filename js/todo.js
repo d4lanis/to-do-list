@@ -32,6 +32,31 @@ addTask.addEventListener('click',function (){
     }
 });
 
+task.addEventListener('keyup', function (e){
+    if(e.keyCode === 13){
+        const text = task.value;
+        const elementHTML = 
+            `<div class="tasks form-group row">
+                <div class="form-group col">
+                <div class="form-control justify-content">
+                    <input type="checkbox" class="form-check-input" onclick="checked()">
+                    ${text.toUpperCase()}
+                </div>
+            </div>`;
+
+        if(text){
+            div.insertAdjacentHTML('beforebegin',elementHTML);
+            task.value = null;
+            task.focus();
+            tasks = document.querySelectorAll('div.visually-hidden');
+            console.log(tasks);
+        }
+        else{
+            alert('No se ha escrito una tarea para agregarla');
+        }
+    }
+});
+
 allTasks.addEventListener('click', function (){
     tasks = document.querySelectorAll('div.visually-hidden');
     tasks.forEach(el =>{
@@ -47,6 +72,10 @@ activeTasks.addEventListener('click', function (){
             let checkbox = el.closest('div div div.tasks');
             checkbox.classList.add('visually-hidden');
         }
+        else{
+            let checkbox = el.closest('div div div.tasks');
+            checkbox.classList.remove('visually-hidden');
+        }
     });
 });
 
@@ -56,6 +85,10 @@ completedTasks.addEventListener('click', function (){
         if(!el.checked){
             let checkbox = el.closest('div div div.tasks');
             checkbox.classList.add('visually-hidden');
+        }
+        else{
+            let checkbox = el.closest('div div div.tasks');
+            checkbox.classList.remove('visually-hidden');
         }
     });
 });
