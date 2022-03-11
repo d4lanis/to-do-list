@@ -39,7 +39,7 @@ task.addEventListener('keyup', function (e){
             `<div class="tasks form-group row">
                 <div class="form-group col">
                 <div class="form-control justify-content">
-                    <input type="checkbox" class="form-check-input" onclick="checked()">
+                    <input type="checkbox" class="form-check-input">
                     ${text.toUpperCase()}
                 </div>
             </div>`;
